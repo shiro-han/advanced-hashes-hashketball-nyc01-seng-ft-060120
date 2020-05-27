@@ -221,8 +221,7 @@ def long_name_steals_a_ton?
       if attribute == :players
         data.each do |player_array|
           if player_array[:steals] > max_steals
-            max_steals = player_array[:shoe]
-            rebounds = player_array[:rebounds]
+            max_steals = player_array[:steals]
           end
         end
       end
