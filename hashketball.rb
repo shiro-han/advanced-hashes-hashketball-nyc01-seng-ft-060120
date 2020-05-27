@@ -214,7 +214,28 @@ end
 
 def long_name_steals_a_ton?
   longest_steals = player_stats(player_with_longest_name)[:steals]
+  max_steals = 0
+  
+  game_hash.each do |team, team_hash|
+    team_hash.each do |attribute, data|
+      if attribute == :players
+        data.each do |player_array|
+          if player_array[:steals] > max_steals
+            max_steals = player_array[:shoe]
+            rebounds = player_array[:rebounds]
+          end
+        end
+      end
+    end
+  end
 
+  binding.pry
+  
+  if longest_steals == max_steals
+    true
+  else
+    false
+  end
 end
 
 def player_numbers(team_name)
