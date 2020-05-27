@@ -189,13 +189,23 @@ def winning_team
       end
     end
   end
-
-  binding.pry
-
   if (total_points[0] > total_points[1])
     team_names[0]
   else
     team_names[1]
+  end
+end
+
+def player_with_longest_name
+  names = []
+  game_hash.each do |team, team_hash|
+    team_hash.each do |attribute, data|
+      if attribute == :players
+        data.each do |player_array|
+          names << player_array[:player_name]
+        end
+      end
+    end
   end
 end
 
