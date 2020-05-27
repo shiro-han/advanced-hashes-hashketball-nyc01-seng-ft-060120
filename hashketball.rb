@@ -208,7 +208,7 @@ def player_with_longest_name
     end
   end
 
-  binding.pry
+  names.max_by(&:length)
 
 end
 
