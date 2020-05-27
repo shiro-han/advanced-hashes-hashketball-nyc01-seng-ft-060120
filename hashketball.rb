@@ -184,8 +184,9 @@ def winning_team
           team_total += player_array[:points]
         end
       end
-
-      total_points << team_total
+      if team_total != 0
+        total_points << team_total
+      end
     end
   end
 
