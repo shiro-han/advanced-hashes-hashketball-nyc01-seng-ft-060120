@@ -181,7 +181,7 @@ def winning_team
       team_total = 0
       if attribute == :players
         data.each do |player_array|
-          team total += player_array[:points]
+          team_total += player_array[:points]
         end
       end
 
